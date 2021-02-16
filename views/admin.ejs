@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Welcome Admin- <%= uname %></h1>
+    
+    <form action="/admincreate" method="POST">
+            <input type="submit" value="Add Item">
+    </form>
+    <br>
+    <form action="/adminreadall" method="post">
+        <input type="submit" value="Read all Items">
+    </form>
+    <br>
+    <form action="/adminupdate" method="post">
+        <input type="submit" value="Update an Item">
+    </form>
+    <br>
+    <form action="/login" method="post">
+        <input type="submit" value="LogOut">
+    </form>
+    <br>
+    <form action="/readalluser" method="post">
+        <input type="submit" value="Read all customers">
+    </form>
+
+</body>
+</html>

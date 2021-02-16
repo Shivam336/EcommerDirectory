@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>READED-ALL</title>
+</head>
+<body>
+    <h1>Welcome, <%= uname %>, What you want to buy?</h1>
+    <h2>Your credit is: <%= credit %></h2>
+    <br>
+    <% if(details!=null) { %>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Company</th>
+            <th>Product Quantity</th>
+            <th>Product Price</th>
+            <th>Quantity to Buy </th>
+            <th>Buy</th>
+        </tr>
+        <% details.forEach(function(item){  %>
+            <tr>
+                <form action="/buyItem" method="POST">
+                <td><input type="text" name="buy_id" value="<%= item.product_id %>"></td>
+                <td><%= item.product_name %></td>
+                <td><%= item.product_company %></td>
+                <td><%= item.product_quantity %></td>
+                <td><%= item.product_price %></td>
+                
+                    <td><input type="text" name="buy_quantity"></td>
+                    <td><input type="submit" value="Buy"></td>
+            </form>
+            </tr>
+            <% }) %>
+    </table>
+    <% } %>
+    <form action="/login" method="POST">
+        <input type="submit" value="Log-Out">
+    </form>
+</body>
+</html>

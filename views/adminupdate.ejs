@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN-UPDATE</title>
+</head>
+<body>
+    <% if(details!=null) { %>
+    <table>
+        <tr>
+            <th>ProductMain ID</th>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Company</th>
+            <th>Product Quantity</th>
+            <th>Product Price</th>
+            <th>Edit </th>
+            <th>Delete</th>
+        </tr>
+        <% details.forEach(function(item){  %>
+            <tr>
+                <form action="/adminUpdateItem" method="POST">
+                <td><input type="text" name="object_id" value="<%= item._id %>"></td>
+                <td><input type="text" name="product_id" value="<%= item.product_id %>"></td>
+                <td><input type="text" name="product_name" value="<%= item.product_name %>"></td>
+                <td><input type="text" name="product_company" value="<%= item.product_company %>"></td>
+                <td><input type="text" name="product_quantity" value="<%= item.product_quantity %>"></td>
+                <td><input type="text" name="product_price" value="<%= item.product_price %>"></td>
+                <td><input type="submit" value="Edit" formaction="/editItemAdmin"></td>
+                <td><input type="submit" value="Delete" formaction="/deleteItemAdmin"></td>
+            </form>
+            </tr>
+            <% }) %>
+    </table>
+    <% } %>
+    <form action="/login" method="POST">
+        <input type="submit" value="Log-Out">
+    </form>
+</body>
+</html>

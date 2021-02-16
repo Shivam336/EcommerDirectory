@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>READED-ALL</title>
+</head>
+<body>
+    <% if(details!=null) { %>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Company</th>
+            <th>Product Quantity</th>
+            <th>Product Price</th>
+        </tr>
+        <% details.forEach(function(item){  %>
+            <tr>
+                <td><%= item.product_id %></td>
+                <td><%= item.product_name %></td>
+                <td><%= item.product_company %></td>
+                <td><%= item.product_quantity %></td>
+                <td><%= item.product_price %></td>
+            </tr>
+            <% }) %>
+    </table>
+    <% } %>
+</body>
+</html>
